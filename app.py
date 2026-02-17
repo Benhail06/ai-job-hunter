@@ -2,6 +2,7 @@ import streamlit as st
 import os
 from ai_utils import extract_text_from_pdf, analyze_resume_with_ai, match_resume_to_job, rewrite_resume_for_job, generate_interview_questions
 
+os.makedirs("resumes", exist_ok=True)
 
 
 
@@ -73,4 +74,31 @@ if st.session_state.analysis:
 
             st.subheader("Interview Preparation Guide")
             st.text_area("Your Interview Prep", questions, height=600)
+
+
+
+# ---------- FOOTER ----------
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent;
+        color: gray;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    </style>
+
+    <div class="footer">
+        Designed & Developed by <b>Benhail Benjamin</b>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
